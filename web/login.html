@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LOGIN</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button><a class="navbar-brand" href="/web/">Welcome to Smart Room</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/web/users/login">Login</a></li>
+            <li><a href="/web/users/register">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </br></br></br>
+
+<center>
+<form action="/web/users/login" method="POST">
+<table>
+  <tr>
+    <td>
+      <img src="/web/logo.png" width="300" height="150" alt="logo">
+      <div class="form-group">
+        <label for="userid">User Id</label></br>
+        <input id="id_userid" class="form-control" name="userid" type="text" placeholder="User Id" required/>
+      </div>
+      <div class="form-group">
+        <label for="userid">Password</label></br>
+
+        <input type="password" id="id_password" class="form-control" name="password" type="text" placeholder="Password" required/>
+      </div>
+
+      
+      <p><input class="btn btn-success" type="submit" name="save" value="Sign In" /></p>
+      <p>{{error_status}}</p>
+    </td>
+    <!-- <td>
+      &nbsp&nbsp&nbsp
+    </td>
+    <td>
+      &nbsp&nbsp&nbsp<img src="devices.jpg" width="600" height="300" alt="logo">
+    </td> -->
+  </tr>
+</table>
+</form>
+</center>
+</div>
+
+</body>
+<script>
+// Check browser support
+if (typeof(Storage) != "undefined") {
+    // Store
+    localStorage.clear();
+}
+</script>
+</html>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
+<style type="text/css">
+      form.ng-dirty .ng-invalid .quickdate-button {
+        border: solid 1px red;
+      }
+      input.outset {border-style: outset;}
+    </style>
+<title>Menu Page</title>
+</head>
+
+<body>
+
+<div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button><a class="navbar-brand" href="/web/">Welcome to Smart Room</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/web/users/logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </br></br></br>
+<div>
+
+	
+<% for i in user_lists: %>
+<% if i['userid'] != "admin": %>
+<form action="/web/admin/users/delete" method="POST">
+<center>
+<table>
+  <tr>
+	 <td><input type="text" name="userid" value="{{i['userid']}}"readonly  /> </td>
+	 <td><input type="text" name="name" value="{{i['name']}}"readonly  /> </td>
+	 <td><input type="text" name="email" value="{{i['email']}}"readonly /> </td>
+	 <td><input type="submit" name="delete" value="delete" /> </td>
+  </tr>
+
+<% next %>
+</form>
+</table>
+
+</center>
+
+
+
+
+
+</html>
